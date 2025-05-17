@@ -8,7 +8,10 @@ console.log(multiply(2, 3));
 
 // 2. Viết hàm findMin nhận 3 tham số a, b, c, trả về giá trị nhỏ nhất. Gọi hàm và in kết quả với 2 bộ số khác nhau.
 function findMin(a, b, c) {
-  return Math.min(a, b, c);
+  let min = a;
+  if (a > b) min = b;
+  if (b > c) min = c;
+  return min;
 }
 
 console.log(findMin(2, 3, 4));
