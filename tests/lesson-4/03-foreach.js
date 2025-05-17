@@ -1,5 +1,5 @@
 // 1. In ra tất cả các phần tử của một mảng. Ví dụ mảng [1, 2, 3] thì in ra 1 2 3
-let arr = [1, 2, 3];
+let arr = [2, 1, 4];
 arr.forEach((item) => {
   console.log(item);
 });
@@ -12,7 +12,8 @@ let max = arr[0];
 let min = arr[0];
 arr.forEach((item) => {
   sum += item;
-  item > max ? (max = item) : (min = item);
+  if (item > max) max = item;
+  if (item < min) min = item;
 });
 
 console.log("Tổng của mảng là:", sum);
