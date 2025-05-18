@@ -28,7 +28,7 @@ Chọn các phần tử trên web
 - navigate: goto("")
 - Click:
 
-1. Sigle click: .click();
+1. Single click: .click();
 2. Double click: .dbclick();
 3. Right Click: .click({button: 'right'})
 4. Click with dif button: .click({modifiers:['Shift']})
@@ -65,3 +65,5 @@ text() có thể locator element bằng cách: //div[text()=’This is a text’
   Nếu dialog hiện ra
 
 page.on('dialog', dialog => dialog.accept()) handler trc trigger
+
+- allTextContents(): để lấy all contend ví dụ trong lesson5/test4

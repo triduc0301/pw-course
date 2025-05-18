@@ -19,7 +19,9 @@ test('Todo Page', async ({ page }) => {
     await test.step("Remove odd number", async () => {
         //takenote khi elemebt bị xoá todos đang k đc update lại
         let todos = await page.locator("//ul[@id='task-list']/li");
+
         page.on('dialog', dialog => dialog.accept());
+
         for (let i = await page.locator("//ul[@id='task-list']/li").count() - 1; i >= 0; i--) {
             let todo = todos.nth(i);
             let text = await todo.locator("//span").textContent();

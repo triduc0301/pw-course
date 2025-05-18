@@ -12,8 +12,12 @@ let max = arr[0];
 let min = arr[0];
 arr.forEach((item) => {
   sum += item;
-  if (item > max) max = item;
-  if (item < min) min = item;
+  if (item > max) {
+    max = item;
+  }
+  if (item < min) {
+    min = item;
+  }
 });
 
 console.log("Tổng của mảng là:", sum);

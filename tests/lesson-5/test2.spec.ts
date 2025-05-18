@@ -10,8 +10,11 @@ test("Add to cart", async ({ page }) => {
     })
 
     await test.step("Add each product to cart", async () => {
+
         await page.locator("//button[@data-product-id='1']").click({ clickCount: 2 });
+
         await page.locator("//button[@data-product-id='2']").click({ clickCount: 3 });
+
         await page.locator("//button[@data-product-id='3']").click();
     })
 })

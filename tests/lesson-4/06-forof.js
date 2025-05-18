@@ -4,7 +4,7 @@
 let arr = [1, 5, 3, 4, 3, 55, 23];
 let a = 3;
 for (let num of arr) {
-  if (num === 3) {
+  if (num === a) {
     console.log(
       "Vị trí phần tử đầu tiên là:",
       arr[num - 2],

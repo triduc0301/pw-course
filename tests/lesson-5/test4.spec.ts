@@ -43,3 +43,37 @@ test('Personal notes', async ({ page }) => {
         await page.locator("//input[@id='search']").fill("Xu hướng viết code không cần hiểu lập trìn");
     })
 })
+
+// Bổ sung phần advanced sau khi chữa bài
+test('Personal notes advanced', async ({ page }) => {
+
+    //Khởi tạo 2 biến để lưu thông tin của 10 bài báo
+    let titles = [""];
+    let content = [""];
+
+    await test.step("Go to vnExpress", async () => {
+        await page.goto("https://vnexpress.net/khoa-hoc-cong-nghe");
+        titles = await page.locator("//h3[@class='title-news']/a").allTextContents();
+        content = await page.locator("//p[@class='description']/a").allTextContents();
+    })
+
+    await test.step("Go to page Playwright", async () => {
+        await page.goto("https://material.playwrightvn.com/");
+    })
+
+    await test.step("Click to Todo page", async () => {
+        await page.locator("//a[text()='Bài học 4: Personal notes']").click();
+    })
+
+    await test.step("Add 10 note", async () => {
+        for (let i = 0; i < 10; i++) {
+            await page.locator("//input[@id='note-title']").fill(titles[i]);
+            await page.locator("//textarea[@id='note-content']").fill(content[i]);
+            await page.locator("//button[@id='add-note']").click();
+        }
+    })
+
+    await test.step("Search title", async () => {
+        await page.locator("//input[@id='search']").fill("AI");
+    })
+})
