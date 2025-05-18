@@ -52,7 +52,7 @@ test('Personal notes advanced', async ({ page }) => {
     let content = [""];
 
     await test.step("Go to vnExpress", async () => {
-        await page.goto("https://vnexpress.net/khoa-hoc-cong-nghe");
+        await page.goto("https://vnexpress.net/khoa-hoc-cong-nghe", { waitUntil: 'domcontentloaded' });
         titles = await page.locator("//h3[@class='title-news']/a").allTextContents();
         content = await page.locator("//p[@class='description']/a").allTextContents();
     })
