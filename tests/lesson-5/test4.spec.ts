@@ -67,9 +67,11 @@ test('Personal notes advanced', async ({ page }) => {
 
     await test.step("Add 10 note", async () => {
         for (let i = 0; i < 10; i++) {
-            await page.locator("//input[@id='note-title']").fill(titles[i]);
-            await page.locator("//textarea[@id='note-content']").fill(content[i]);
-            await page.locator("//button[@id='add-note']").click();
+            if (titles[i] && content[i]) {
+                await page.locator("//input[@id='note-title']").fill(titles[i]);
+                await page.locator("//textarea[@id='note-content']").fill(content[i]);
+                await page.locator("//button[@id='add-note']").click();
+            }
         }
     })
 
