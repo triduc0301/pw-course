@@ -16,6 +16,8 @@ Git branch name_branch: Tạo nhánh mới name_branch
 
 Git checkout name_branch: Switch sang name_branch
 
+Git checkout -b name_branch: Tạo và switch qua name_branch
+
 **Gitignore**: Bỏ qua các file không cần git check
 
 ## JS
