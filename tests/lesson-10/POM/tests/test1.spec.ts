@@ -4,7 +4,7 @@ import { Register } from '../page/register';
 test("Fill data to register", async ({ page }) => {
     let username = "ducbt";
     let email = `${username}@gmail.com`;
-    let filePath = "tests/student-submissions/10-ducbt/lesson-10/POM/img/854033242929cb15cd206e07b3981d58.jpg";
+    let filePath = "tests/lesson-10/POM/img/854033242929cb15cd206e07b3981d58.jpg";
     let user1 = {
         username: username,
         email: email,
