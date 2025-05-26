@@ -2,7 +2,15 @@ import { test, expect } from '@playwright/test';
 
 test.describe("Conduit web", async () => {
     const BASE_URL: string = "https://conduit-api.bondaracademy.com";
-    const username = "ducbt01";
+    function randomUsername() {
+        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        let name = '';
+        for (let i = 0; i < 8; i++) {
+            name += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return name;
+    }
+    const username = randomUsername();
     const email = `${username}@gmail.com`;
     const password = "12345678";
     const article = {
